@@ -1,0 +1,21 @@
+.form-auth__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto 0 10px;
+  /* border: 1px white dashed; */
+}
+
+.form-auth__title {
+  font-family: Inter, "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  text-align: center;
+}
