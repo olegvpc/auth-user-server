@@ -33,6 +33,7 @@ function App() {
       const token = localStorage.getItem('jwt');
       verifyToken(token)
         .then((userData) => {
+          playSound('gong.mp3'); // при монтировании элемента слышен гонг
           setCurrentUser(userData);
         })
         .catch((err) => {
@@ -89,6 +90,11 @@ function App() {
     setIsLoading(false)
     setCurrentUser({});
   }
+  function playSound(fileName) {
+    const audio = new Audio();
+    audio.src = `https://code.s3.yandex.net/web-code/react/${fileName}`;
+    audio.play();
+  }
 
 
   return (
@@ -103,7 +109,7 @@ function App() {
         {isLoading ?
         <Preloader /> :
         (
-          <main className="App-header">
+        <main className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
